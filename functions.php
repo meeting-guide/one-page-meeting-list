@@ -4,7 +4,7 @@
 //make the home page the meetings post_type archive
 if (function_exists('tsml_front_page')) {
 	add_action('pre_get_posts', 'tsml_front_page');	
-} else {
-	die('twelve step meeting list not installed');
+} elseif (!is_admin()) {
+	echo 'warning! twelve step meeting list not installed';
 }
 
